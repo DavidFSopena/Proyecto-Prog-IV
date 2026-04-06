@@ -175,7 +175,7 @@ int insertarDatosPrueba(sqlite3 *db) {
     char nombreLucia[] = "Lucia";
     char apellidosLucia[] = "Salvatierra Saenz";
     char telefonoLucia[] = "600111111";
-    char emailLucia[] = "lucia@opendeusto.es";
+    char emailLucia[] = "lucia.salvatierra@opendeusto.es";
 
     result = sqlite3_prepare_v2(db, sqlInsertPersona, strlen(sqlInsertPersona) + 1, &stmt, NULL);
     if (result != SQLITE_OK) {
