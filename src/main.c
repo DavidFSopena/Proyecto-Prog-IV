@@ -3,6 +3,9 @@
 #include "db.h"
 
 int main() {
+    //
+	// BASE DE DATOS
+    //
     sqlite3 *db;
     int res;
 
@@ -104,4 +107,8 @@ int main() {
     sqlite3_close(db);
     printf("\n--- Fin de demo ---\n");
     return 0;
+
+    //
+	// FIN BASE DE DATOS
+    //
 }

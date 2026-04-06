@@ -2,7 +2,7 @@
 #include <string.h>
 #include "db.h"
 
-// GENERAL
+// GENERAL SQL
 
 int ejecutarSQL(sqlite3 *db, char sql[]) {
     sqlite3_stmt *stmt;

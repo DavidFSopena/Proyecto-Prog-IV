@@ -3,7 +3,7 @@
 
 #include "sqlite3.h"
 
-// Inicio
+// Inicio bases
 int ejecutarSQL(sqlite3 *db, char sql[]);
 
 // Iniciar tablas y datos (los 3 colegiales que he puesto somos los que hemos hecho este proyecto)
