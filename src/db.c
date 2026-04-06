@@ -152,11 +152,11 @@ int insertarDatosPrueba(sqlite3 *db) {
     char nombreJavi[] = "Javier";
     char apellidosJavi[] = "Montero Villoslada";
     char telefonoJavi[] = "600999999";
-    char emailJavi[] = "javier@opendeusto.es";
+    char emailJavi[] = "montero.javier@opendeusto.es";
 
     result = sqlite3_prepare_v2(db, sqlInsertPersona, strlen(sqlInsertPersona) + 1, &stmt, NULL);
     if (result != SQLITE_OK) {
-        printf("Error preparando INSERT persona Javi\n");
+        printf("Error preparando INSERT persona Javier\n");
         return 0;
     }
     sqlite3_bind_text(stmt, 1, dniJavi, strlen(dniJavi), SQLITE_STATIC);
@@ -167,14 +167,14 @@ int insertarDatosPrueba(sqlite3 *db) {
     result = sqlite3_step(stmt);
     sqlite3_finalize(stmt);
     if (result != SQLITE_DONE) {
-        printf("Error insertando persona Javi\n");
+        printf("Error insertando persona Javier\n");
         return 0;
     }
 
-    char dniLucia[] = "12348765C";
+    char dniLucia[] = "54022683F";
     char nombreLucia[] = "Lucia";
     char apellidosLucia[] = "Salvatierra Saenz";
-    char telefonoLucia[] = "600111111";
+    char telefonoLucia[] = "659463656";
     char emailLucia[] = "lucia.salvatierra@opendeusto.es";
 
     result = sqlite3_prepare_v2(db, sqlInsertPersona, strlen(sqlInsertPersona) + 1, &stmt, NULL);
