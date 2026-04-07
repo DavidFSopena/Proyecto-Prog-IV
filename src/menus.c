@@ -11,117 +11,118 @@ void menuSetDB(sqlite3 *db) {
 }
 
 void mostrarMenuPrincipal() {
-	printf("\nMENÚ PRINCIPAL CMD\n");
-	printf("\n_______________________\n");
-	printf("1. Gestión de colegiales\n");
-	printf("2. Gestión de habitaciones\n");
-	printf("3. Gestión de incidencias\n");
-	printf("4. Gestión de pagos\n");
-	printf("5. Reservas y actividades\n");
-	printf("6. Llegadas nocturnas\n");
-	printf("7. Salidas por vacaciones\n");
-	printf("8. Normas y sanciones\n");
-	printf("9. Propuestas y comentarios\n");
-	printf("0. Cerrar sesión\n");
-	printf("Elige una opcion: ");
+    printf("\nMENU PRINCIPAL CMD\n");
+    printf("_______________________\n");
+    printf("1. Gestion de colegiales\n");
+    printf("2. Gestion de habitaciones\n");
+    printf("3. Gestion de incidencias\n");
+    printf("4. Gestion de pagos\n");
+    printf("5. Reservas y actividades\n");
+    printf("6. Llegadas nocturnas\n");
+    printf("7. Salidas por vacaciones\n");
+    printf("8. Normas y sanciones\n");
+    printf("9. Propuestas y comentarios\n");
+    printf("0. Cerrar sesion\n");
+    printf("Elige una opcion: ");
 }
 
 void mostrarMenuGestionColegiales() {
-	printf("\nGESTIÓN DE COLEGIALES\n");
-	printf("\n_______________________\n");
-	printf("1. Alta de colegial\n");
-	printf("2. Baja de colegial\n");
-	printf("3. Modificar datos colegial\n");
-	printf("4. Consultar por DNI\n");
-	printf("5. Buscar colegiales por filtros\n");
-	printf("0. Volver\n");
-	printf("Elige una opción: ");
+    printf("\nGESTION DE COLEGIALES\n");
+    printf("_______________________\n");
+    printf("1. Alta de colegial\n");
+    printf("2. Baja de colegial\n");
+    printf("3. Modificar datos colegial\n");
+    printf("4. Consultar por DNI\n");
+    printf("5. Buscar colegiales por filtros\n");
+    printf("0. Volver\n");
+    printf("Elige una opcion: ");
 }
 
 void mostrarMenuGestionHabitaciones() {
-	printf("\nGESTIÓN DE HABITACIONES\n");
-	printf("\n_______________________\n");
-	printf("1. Consultar disponibilidad\n");
-	printf("2. Asignar habitación a colegial\n");
-	printf("3. Resgistrar huésped (hotel - planta A)\n");
-	printf("4. Liberar habitación\n");
-	printf("5. Registrar solicitud cambio de habitación\n");
-	printf("0. Volver\n");
-	printf("Elige una opción: ");
+    printf("\nGESTION DE HABITACIONES\n");
+    printf("_______________________\n");
+    printf("1. Consultar disponibilidad\n");
+    printf("2. Consultar ocupacion por torre\n");
+    printf("3. Asignar habitacion a colegial\n");
+    printf("4. Registrar huesped (hotel - planta A)\n");
+    printf("5. Dar de baja huesped\n");
+    printf("6. Ver huespedes actuales\n");
+    printf("0. Volver\n");
+    printf("Elige una opcion: ");
 }
 
 void mostrarMenuGestionIncidencias() {
-	printf("\nGESTIÓN DE INCIDENCIAS\n");
-	printf("\n_______________________\n");
-	printf("1. Registrar nueva incidencia\n");
-	printf("2. Ver incidencias abiertas\n");
-	printf("3. Cambiar estado de incidencia\n");
-	printf("4. Consultar por habitación\n");
-	printf("0. Volver\n");
-	printf("Elige una opción: ");
+    printf("\nGESTION DE INCIDENCIAS\n");
+    printf("_______________________\n");
+    printf("1. Registrar nueva incidencia\n");
+    printf("2. Ver incidencias abiertas\n");
+    printf("3. Ver incidencias por urgencia\n");
+    printf("4. Cambiar estado de incidencia\n");
+    printf("5. Consultar por habitacion\n");
+    printf("0. Volver\n");
+    printf("Elige una opcion: ");
 }
 
 void mostrarMenuGestionPagos() {
-	printf("\nGESTIÓN DE PAGOS\n");
-	printf("\n_______________________\n");
-	printf("1. Registrar modo de pago\n");
-	printf("2. Registrar pago realizado\n");
-	printf("3. Consultar estado de pagos por colegial\n");
-	printf("4. Ver pagos pendientes\n");
-	printf("0. Volver\n");
-	printf("Elige una opción: ");
+    printf("\nGESTION DE PAGOS\n");
+    printf("_______________________\n");
+    printf("1. Registrar pago de colegial\n");
+    printf("2. Marcar pago como realizado\n");
+    printf("3. Consultar pagos por colegial\n");
+    printf("4. Ver pagos pendientes\n");
+    printf("0. Volver\n");
+    printf("Elige una opcion: ");
 }
 
 void mostrarMenuGestionReservasActividades() {
-	printf("\nRESERVAS Y ACTIVIDADES\n");
-	printf("\n_______________________\n");
-	printf("1. Reservar sala de trabajo\n");
-	printf("2. Consultar reservas salas(por fecha / sala)\n");
-	printf("3. Cancelar reserva sala\n");
-	printf("4. Registrar inscripción a actividad\n");
-	printf("5. Ver inscritos por actividad\n");
-	printf("0. Volver\n");
-	printf("Elige una opción: ");
+    printf("\nRESERVAS Y ACTIVIDADES\n");
+    printf("_______________________\n");
+    printf("1. Reservar sala de trabajo\n");
+    printf("2. Ver reservas por fecha\n");
+    printf("3. Ver reservas por sala\n");
+    printf("4. Registrar nueva actividad\n");
+    printf("5. Inscribir colegial a actividad\n");
+    printf("6. Ver inscritos por actividad\n");
+    printf("0. Volver\n");
+    printf("Elige una opcion: ");
 }
 
 void mostrarMenuLlegadasNocturnas() {
-	printf("\nREGISTRO LLEGADAS NOCTURNAS\n");
-	printf("\n_______________________\n");
-	printf("1. Registrar llegada (DNI o habitación)\n");
-	printf("2. Consultar histórico por colegial\n");
-	printf("0. Volver\n");
-	printf("Elige una opción: ");
+    printf("\nREGISTRO LLEGADAS NOCTURNAS\n");
+    printf("_______________________\n");
+    printf("1. Registrar llegada nocturna\n");
+    printf("2. Consultar por fecha\n");
+    printf("3. Consultar historico por colegial\n");
+    printf("0. Volver\n");
+    printf("Elige una opcion: ");
 }
 
 void mostrarMenuSalidasVacaciones() {
-	printf("\nREGISTRO SALIDAS POR VACACIONES\n");
-	printf("\n_______________________\n");
-	printf("1. Registrar salida (entrega de llave)\n");
-	printf("2. Regustar llegada (recogida de llave)\n");
-	printf("3. Consultar quién está fuera actualmente\n");
-	printf("0. Volver\n");
-	printf("Elige una opción: ");
+    printf("\nREGISTRO SALIDAS POR VACACIONES\n");
+    printf("_______________________\n");
+    printf("1. Registrar salida (entrega de llave)\n");
+    printf("2. Registrar regreso (recogida de llave)\n");
+    printf("3. Consultar quien esta fuera actualmente\n");
+    printf("0. Volver\n");
+    printf("Elige una opcion: ");
 }
 
 void mostrarMenuNormasSanciones() {
-	printf("\nNORMAS Y SANCIONES\n");
-	printf("\n_______________________\n");
-	printf("1. Registrar sanción\n");
-	printf("2. Consultar sanciones por colegial\n");
-	printf("3. Ver sanciones recientes\n");
-	printf("0. Volver\n");
-	printf("Elige una opción: ");
+    printf("\nNORMAS Y SANCIONES\n");
+    printf("_______________________\n");
+    printf("1. Registrar sancion\n");
+    printf("2. Consultar sanciones por colegial\n");
+    printf("3. Ver sanciones recientes\n");
+    printf("0. Volver\n");
+    printf("Elige una opcion: ");
 }
 
 void mostrarMenuPropuestasYComentarios() {
-	printf("\nPROPUESTAS Y COMENTARIOS\n");
-	printf("\n_______________________\n");
-	printf("1. Registrar propuesta/comentario\n");
-	printf("2. Ver pendientes\n");
-	printf("3. Buscar por colegial\n");
-	printf("4. Cambiar estado\n");
-	printf("0. Volver\n");
-	printf("Elige una opcion: ");
+    printf("\nPROPUESTAS Y COMENTARIOS\n");
+    printf("_______________________\n");
+    printf("(Funcionalidad en desarrollo)\n");
+    printf("0. Volver\n");
+    printf("Elige una opcion: ");
 }
 
 /* Genera un ID simple contando filas en una tabla
