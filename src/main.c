@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include "sqlite3.h"
 #include "db.h"
+#include "config.h"
+#include "log.h"
+#include "login.h"
 
 int main() {
     //
@@ -8,8 +11,19 @@ int main() {
     //
     sqlite3 *db;
     int res;
+    Config cfg;
 
-    res = sqlite3_open("data/cmd.db", &db);
+    if (!cargarConfig("config/config.conf", &cfg)) {
+        printf("ERROR - No se pudo cargar la configuracion\n");
+        return 1;
+    }
+
+    if (!pedirLogin(&cfg)) {
+        printf("ERROR - Acceso denegado\n");
+        return 1;
+    }
+
+    res = sqlite3_open(cfg.ruta_db, &db);
     if (res != SQLITE_OK) {
         printf("ERROR - No se pudo abrir la base de datos: %s\n", sqlite3_errmsg(db));
         return 1;
