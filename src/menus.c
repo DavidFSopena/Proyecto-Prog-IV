@@ -123,6 +123,7 @@ void menuPrincipal() {
 
     do {
         mostrarMenuPrincipal();
+        scanf("%d", &opcion);
 
         switch (opcion) {
             case 1: menuGestionColegiales();
@@ -150,5 +151,5 @@ void menuPrincipal() {
                 printf("\nOpcion no valida.\n");
         }
 
-    } while (opcion != 10);
+    } while (opcion != 0);
 }
