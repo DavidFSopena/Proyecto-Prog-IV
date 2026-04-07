@@ -27,11 +27,17 @@ int pedirLogin(const Config *cfg) {
 
     printf("=== LOGIN ===\n");
 
+    /* Limpia lo que haya quedado en el buffer antes de leer texto */
+    limpiarBuffer();
+
     printf("Usuario: ");
     leerCadena(usuario, sizeof(usuario));
+    printf("[DEBUG usuario='%s']\n", usuario);
+
 
     printf("Password: ");
     leerCadena(password, sizeof(password));
+    printf("[DEBUG password='%s']\n", password);
 
     if (!validarTextoVacio(usuario) || !validarTextoVacio(password)) {
         printf("Error: usuario o password vacios.\n");
