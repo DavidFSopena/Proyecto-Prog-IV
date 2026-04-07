@@ -1507,7 +1507,20 @@ int mostrarReservasPorSala(sqlite3 *db, char idSala[]) {
 // DATOS INICIALES DE PRUEBA
 
 int cargarDatosPrueba(sqlite3 *db) {
-
+	ejecutarSQL(db, "DELETE FROM inscripcion_colegial;");
+	ejecutarSQL(db, "DELETE FROM reserva_sala;");
+	ejecutarSQL(db, "DELETE FROM actividad;");
+	ejecutarSQL(db, "DELETE FROM sancion;");
+	ejecutarSQL(db, "DELETE FROM salida_vacaciones;");
+	ejecutarSQL(db, "DELETE FROM llegada_nocturna;");
+	ejecutarSQL(db, "DELETE FROM pago;");
+	ejecutarSQL(db, "DELETE FROM incidencia;");
+	ejecutarSQL(db, "DELETE FROM huesped;");
+	ejecutarSQL(db, "DELETE FROM colegial;");
+	ejecutarSQL(db, "DELETE FROM persona;");
+	ejecutarSQL(db, "DELETE FROM habitacion;");
+	ejecutarSQL(db, "DELETE FROM piso;");
+	ejecutarSQL(db, "DELETE FROM torre;");
     /* Torres */
     if (!insertarTorre(db, 1, "Izquierda"))  return 0;
     if (!insertarTorre(db, 2, "Central"))    return 0;
