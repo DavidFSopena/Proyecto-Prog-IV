@@ -34,7 +34,7 @@ int insertarColegial(sqlite3 *db,
                      char emailPadre2[], char iban[],
                      char fechaNacimiento[], char curso[],
                      char grado[], char alergias[],
-                     char idHabitacion[], int idPiso);int bajaColegial(sqlite3 *db, char dni[]);
+                     char idHabitacion[], int idPiso);
 int bajaColegial(sqlite3 *db, char dni[]);
 int modificarTelefonoColegial(sqlite3 *db, char dni[], char nuevoTelefono[]);
 int modificarEmailColegial(sqlite3 *db, char dni[], char nuevoEmail[]);
