@@ -38,7 +38,8 @@ void menuPropuestasYComentarios() {
 
     do {
         mostrarMenuPropuestasYComentarios();
-        leerCadena(texto, sizeof(texto));
+        printf("");
+        fgets(texto, sizeof(texto), stdin);
         opcion = atoi(texto);
 
         switch (opcion) {
@@ -76,7 +77,8 @@ void menuPrincipal() {
 
     do {
         mostrarMenuPrincipal();
-        leerCadena(texto, sizeof(texto));
+        printf("");
+        fgets(texto, sizeof(texto), stdin);
         opcion = atoi(texto);
 
         switch (opcion) {
