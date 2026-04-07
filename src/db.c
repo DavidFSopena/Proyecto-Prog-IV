@@ -1,3 +1,11 @@
+
+/**
+ * Este código ha sido elaborado con la ayuda de una versión generada con Claude
+ * sobre todo para la estética y que quede bien lo que se imprime por pantalla para ajustarlo a la fase 00
+ * La versión final fue revisada y adaptada para la ausencia de errores.
+ */
+
+
 #include <stdio.h>
 #include <string.h>
 #include "db.h"
