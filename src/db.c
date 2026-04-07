@@ -1552,6 +1552,36 @@ int cargarDatosPrueba(sqlite3 *db) {
             "ES76 0049 1500 0527 6004 3011",
             "2005-02-20", "2", "Ingenieria Informatica + Ciencia de Datos e IA", "frutos secos",
             "I414", 2)) return 0;
+    // INCIDENCIAS
+        insertarIncidencia(db, 1, "Bombilla fundida en el bano", 3,
+            "abierta", "2026-04-06", "", "12345678A", "C101");
+
+        // PAGOS
+        insertarPago(db, 1, "12345678A", "mensual",
+            "pendiente", "2026-04-06", 850);
+
+        // LLEGADAS NOCTURNAS
+        registrarLlegadaNocturna(db, 1, "12345678A",
+            "C101", "2026-04-05", "02:00");
+
+        // SALIDAS
+        registrarSalidaVacaciones(db, 1, "12345678A",
+            "2026-03-20", "", "semana santa");
+
+        // SANCIONES
+        insertarSancion(db, 1, "12345678A",
+            "2026-04-01", "aviso", "Ruido", 0);
+
+        // ACTIVIDADES
+        insertarActividad(db, 1, "Charla IA",
+            "evento", "2026-04-10", "18:00",
+            "Sala A1", "");
+
+        // RESERVAS
+        insertarReserva(db, 1, "SALA_A1", "12345678A",
+            "2026-04-07", "10:00", "12:00");
 
     return 1;
 }
+
+
