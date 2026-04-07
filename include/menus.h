@@ -1,6 +1,9 @@
 #ifndef MENUS_H
 #define MENUS_H
 
+#include "sqlite3.h"
+void menuSetDB(sqlite3 *db);
+
 void menuPrincipal();
 void menuGestionColegiales();
 void menuGestionHabitaciones();
