@@ -11,7 +11,7 @@ int main() {
     int res;
     Config cfg;
 
-    if (!cargarConfig("config/admin.conf", &cfg)) {
+    if (!cargarConfig("../config/admin.conf", &cfg)) {
         printf("ERROR - No se pudo cargar la configuracion\n");
         return 1;
     }
