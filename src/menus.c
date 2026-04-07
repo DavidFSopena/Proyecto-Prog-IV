@@ -656,7 +656,7 @@ void menuGestionReservasActividades() {
 
 		case 3: { /* Reservas por sala */
 			char sala[20];
-			printf("\Reservas por sala\n");
+			printf("\nReservas por sala\n");
 			printf("\n_______________________\n");
 			printf("ID sala: ");
 			leerCadena(sala, sizeof(sala));

@@ -8,17 +8,11 @@
 
 
 int main() {
-    //
-	// BASE DE DATOS
-    //
+
+	// BASE DE DATROS
     sqlite3 *db;
     int res;
     Config cfg;
-
-    if (!cargarConfig("config/config.conf", &cfg)) {
-        printf("ERROR - No se pudo cargar la configuracion\n");
-        return 1;
-    }
 
     if (!pedirLogin(&cfg)) {
         printf("ERROR - Acceso denegado\n");
@@ -89,20 +83,20 @@ int main() {
     mostrarLlegadasNocturnasPorFecha(db, "2026-04-06");
     mostrarLlegadasNocturnasPorColegial(db, "12345678A");
 
-    // SALIDA POR VACACIONES
+    //SALIDA POR VACACIONES
     registrarSalidaVacaciones(db, 1, "54022683F", "2026-04-10", "", "semana_santa");
     mostrarColegialFuera(db);
     registrarRegresoVacaciones(db, 1, "2026-04-18");
     printf("\nOK - Regreso registrado:\n");
     mostrarColegialFuera(db);
 
-    // SANCIONES
+    //SANCIONES
     insertarSancion(db, 1, "87654321B", "2026-04-06",
                    "aviso", "Introduccion de alcohol en el edificio", 0);
     mostrarSancionesPorColegial(db, "87654321B");
     mostrarSancionesRecientes(db);
 
-    // ACTIVIDADES
+    // ACTIVIDADESA
     insertarActividad(db, 1, "Coloquio sobre IA", "coloquio",
                      "2026-04-15", "19:00", "Salon de actos", "");
     inscribirColegialActividad(db, 1, "12345678A", "2026-04-07");
@@ -121,10 +115,5 @@ int main() {
     mostrarTorres(db);
 
     sqlite3_close(db);
-    printf("\n--- Fin de demo ---\n");
     return 0;
-
-    //
-	// FIN BASE DE DATOS
-    //
 }
