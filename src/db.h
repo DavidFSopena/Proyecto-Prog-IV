@@ -44,6 +44,7 @@ int buscarColegialPorHabitacion(sqlite3 *db, char idHabitacion[]);
 int listarColegialesTorre(sqlite3 *db, char nombreTorre[]);
 int colegialTieneIncidenciasAbiertas(sqlite3 *db, char dni[]);
 int colegialTienePagosPendientes(sqlite3 *db, char dni[]);
+int obtenerIdPisoDeHabitacion(sqlite3 *db, char idHabitacion[]);
 
 // Huespedes
 int insertarHuesped(sqlite3 *db,

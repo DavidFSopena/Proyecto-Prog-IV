@@ -230,8 +230,14 @@ void menuGestionColegiales() {
 			leerCadena(alergias, sizeof(alergias));
 			printf("Habitacion (ej. C508): ");
 			leerCadena(habitacion, sizeof(habitacion));
-			printf("ID piso (numero): ");
-			idPiso = leerEntero();
+
+			idPiso = obtenerIdPisoDeHabitacion(g_db, habitacion);
+
+			if (idPiso == -1) {
+			    printf("ERROR - La habitacion no existe.\n");
+			    pausarPantalla();
+			    break;
+			}
 
 			if (insertarColegial(g_db, dni, nombre, apellidos, telefono,
 					emailPersonal, emailDeusto, telPadre1, emailPadre1,

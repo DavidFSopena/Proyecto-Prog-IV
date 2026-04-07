@@ -240,6 +240,28 @@ int insertarPiso(sqlite3 *db, int idPiso, int numeroPiso, int idTorre) {
     return 1;
 }
 
+int obtenerIdPisoDeHabitacion(sqlite3 *db, char idHabitacion[]) {
+    sqlite3_stmt *stmt;
+    int res;
+    int idPiso = -1;
+    char sql[] = "SELECT id_piso FROM habitacion WHERE id_habitacion = ?";
+
+    res = sqlite3_prepare_v2(db, sql, strlen(sql) + 1, &stmt, NULL);
+    if (res != SQLITE_OK) {
+        return -1;
+    }
+
+    bindTexto(stmt, 1, idHabitacion);
+    res = sqlite3_step(stmt);
+
+    if (res == SQLITE_ROW) {
+        idPiso = sqlite3_column_int(stmt, 0);
+    }
+
+    sqlite3_finalize(stmt);
+    return idPiso;
+}
+
 int mostrarTorres(sqlite3 *db) {
     sqlite3_stmt *stmt;
     int res;
@@ -851,8 +873,10 @@ int insertarIncidencia(sqlite3 *db,
     res = sqlite3_step(stmt);
     sqlite3_finalize(stmt);
 
-    if (res != SQLITE_DONE) { printf("ERROR - Insertando incidencia\n"); return 0; }
-    return 1;
+    if (res != SQLITE_DONE) {
+        printf("ERROR - Insertando incidencia: %s\n", sqlite3_errmsg(db));
+        return 0;
+    }    return 1;
 }
 
 int cambiarEstadoIncidencia(sqlite3 *db, int idIncidencia,
@@ -1096,8 +1120,10 @@ int registrarLlegadaNocturna(sqlite3 *db,
     res = sqlite3_step(stmt);
     sqlite3_finalize(stmt);
 
-    if (res != SQLITE_DONE) { printf("ERROR - Insertando llegada nocturna\n"); return 0; }
-    return 1;
+    if (res != SQLITE_DONE) {
+        printf("ERROR - Insertando llegada nocturna: %s\n", sqlite3_errmsg(db));
+        return 0;
+    }    return 1;
 }
 
 int mostrarLlegadasNocturnasPorColegial(sqlite3 *db, char dni[]) {
