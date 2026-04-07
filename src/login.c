@@ -32,12 +32,9 @@ int pedirLogin(const Config *cfg) {
 
     printf("Usuario: ");
     leerCadena(usuario, sizeof(usuario));
-    printf("[DEBUG usuario='%s']\n", usuario);
-
 
     printf("Password: ");
     leerCadena(password, sizeof(password));
-    printf("[DEBUG password='%s']\n", password);
 
     if (!validarTextoVacio(usuario) || !validarTextoVacio(password)) {
         printf("Error: usuario o password vacios.\n");
