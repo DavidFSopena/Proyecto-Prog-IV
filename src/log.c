@@ -7,7 +7,7 @@ static void escribirLog(const char *rutaLog, const char *nivel, const char *mens
     time_t t;
     struct tm *tm_info;
 
-    if (rutaLog == NULL || mensaje == NULL || nivel == NULL) {
+    if (rutaLog == NULL || nivel == NULL || mensaje == NULL) {
         return;
     }
 
@@ -18,6 +18,11 @@ static void escribirLog(const char *rutaLog, const char *nivel, const char *mens
 
     time(&t);
     tm_info = localtime(&t);
+
+    if (tm_info == NULL) {
+        fclose(f);
+        return;
+    }
 
     fprintf(f, "[%04d-%02d-%02d %02d:%02d:%02d] [%s] %s\n",
             tm_info->tm_year + 1900,

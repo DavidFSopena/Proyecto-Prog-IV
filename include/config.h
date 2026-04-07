@@ -10,9 +10,8 @@ typedef struct {
     char password[MAX_CONFIG_VALUE];
 } Config;
 
-int cargarConfig(const char *nombreFichero, Config *cfg);
 void inicializarConfig(Config *cfg);
+int cargarConfig(const char *nombreFichero, Config *cfg);
 void imprimirConfig(const Config *cfg);
 
 #endif
-

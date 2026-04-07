@@ -4,34 +4,44 @@
 #include "config.h"
 
 static void trim(char *str) {
-	int inicio = 0;
-	int fin = strlen(str) -1;
-	int i, j;
+    int inicio = 0;
+    int fin;
+    int i, j;
 
-	while (str[inicio] != '\0' && isspace((unsigned char) str[inicio])) {
-		inicio++;
-	}
+    if (str == NULL || str[0] == '\0') {
+        return;
+    }
 
-	while (fin >= inicio && isspace ((unsigned char)str[fin])) {
-		fin--;
-	}
+    fin = (int)strlen(str) - 1;
 
-	for (i=inicio,j=0;i<=fin;i++,j++) {
-		str[j] = str[i];
-	}
-	str[j] = '\0';
+    while (str[inicio] != '\0' && isspace((unsigned char)str[inicio])) {
+        inicio++;
+    }
 
+    while (fin >= inicio && isspace((unsigned char)str[fin])) {
+        fin--;
+    }
+
+    for (i = inicio, j = 0; i <= fin; i++, j++) {
+        str[j] = str[i];
+    }
+    str[j] = '\0';
 }
 
 static void copiarValor(char *destino, const char *origen, int max) {
-	strncpy(destino, origen, max -1);
-	destino[max -1] = '\0';
+    if (destino == NULL || origen == NULL || max <= 0) {
+        return;
+    }
+
+    strncpy(destino, origen, max - 1);
+    destino[max - 1] = '\0';
 }
 
 void inicializarConfig(Config *cfg) {
-	if (cfg == NULL) {
-		return;
-	}
+    if (cfg == NULL) {
+        return;
+    }
+
     cfg->ruta_db[0] = '\0';
     cfg->log_file[0] = '\0';
     cfg->usuario[0] = '\0';
@@ -70,8 +80,11 @@ int cargarConfig(const char *nombreFichero, Config *cfg) {
 
         *igual = '\0';
 
-        strcpy(clave, linea);
-        strcpy(valor, igual + 1);
+        strncpy(clave, linea, sizeof(clave) - 1);
+        clave[sizeof(clave) - 1] = '\0';
+
+        strncpy(valor, igual + 1, sizeof(valor) - 1);
+        valor[sizeof(valor) - 1] = '\0';
 
         trim(clave);
         trim(valor);
@@ -102,6 +115,3 @@ void imprimirConfig(const Config *cfg) {
     printf("usuario : %s\n", cfg->usuario);
     printf("password: %s\n", cfg->password);
 }
-
-
-
